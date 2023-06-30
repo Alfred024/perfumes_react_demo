@@ -1,11 +1,11 @@
 import React from 'react';
 
-function MyOrders() {
+function MyAccount() {
     return ( 
       <div>
-
+        section of my account
       </div>      
     );
 }
 
-export {MyOrders};
+export {MyAccount};

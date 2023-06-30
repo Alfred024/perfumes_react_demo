@@ -1,12 +1,17 @@
 import React from 'react';
 import { useRoutes, BrowserRouter } from 'react-router-dom'
 
-import { Home_page } from '../components/Home_page';
-import { MyAccount } from '../components/MyAccount';
-import { MyOrder } from '../components/MyOrder';
-import { MyOrders } from '../components/MyOrders';
-import { NotFound } from '../components/NotFound';
-import { SignIn } from '../components/SignIn';
+//Pages
+import { Home_page } from '../pages/Home_page';
+import { MyAccount } from '../pages/MyAccount';
+import { MyOrder } from '../pages/MyOrder';
+import { MyOrders } from '../pages/MyOrders';
+import { NotFound } from '../pages/NotFound';
+import { SignIn } from '../pages/SignIn';
+
+//Components
+import { NavBar } from '../components/NavBar';
+import { Body_layout } from '../components/Body_layout'
 
 const AppRoutes = () =>{
   let routes = useRoutes([
@@ -24,7 +29,12 @@ const AppRoutes = () =>{
 function App() {
     return ( 
       <BrowserRouter>
-        <AppRoutes/>
+        <NavBar/>
+
+        <Body_layout>
+          <AppRoutes/>
+        </Body_layout>
+        
       </BrowserRouter>      
     );
 }

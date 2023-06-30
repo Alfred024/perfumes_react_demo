@@ -1,11 +1,11 @@
 import React from 'react';
 
-function SignIn() {
+function MyOrders() {
     return ( 
       <div>
-
+        section of my orders
       </div>      
     );
 }
 
-export {SignIn};
+export {MyOrders};

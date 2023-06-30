@@ -1,11 +1,11 @@
 import React from 'react';
 
-function MyAccount() {
+function SignIn() {
     return ( 
       <div>
-
+        Section of Sign in
       </div>      
     );
 }
 
-export {MyAccount};
+export {SignIn};
