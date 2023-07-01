@@ -2,8 +2,8 @@ import React from 'react';
 import { useRoutes, BrowserRouter } from 'react-router-dom'
 
 //Context
-import { AppProvider } from '../context';
-
+import { AppContext, AppProvider } from '../context';
+ 
 //Pages
 import { Home_page } from '../pages/Home_page';
 import { MyAccount } from '../pages/MyAccount';
@@ -30,16 +30,28 @@ const AppRoutes = () =>{
 }
 
 function App() {
+    //const contextVar = React.useContext(AppContext);
+    //console.log(contextVar);
+
     return ( 
       <AppProvider>
-        <BrowserRouter>
-        <NavBar/>
+        <AppContext.Consumer>
+        {({
+            cartCount,
+        }) =>(
 
-        <Body_layout>
-          <AppRoutes/>
-        </Body_layout>
-        
-      </BrowserRouter>      
+            <BrowserRouter>
+              <NavBar
+                cartCount={cartCount}
+              />
+
+              <Body_layout>
+                <AppRoutes/>
+              </Body_layout>
+            
+            </BrowserRouter>    
+        )}
+        </AppContext.Consumer>  
       </AppProvider>
     );
 }

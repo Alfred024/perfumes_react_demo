@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
 
-function NavBar() {
+function NavBar({cartCount}) {
     const activeStyle = 'underline underline-offset-4';
 
     return ( 
@@ -38,7 +38,7 @@ function NavBar() {
                   </NavLink>
                 </li>
                 <li className=' px-2 '>
-                  🛒
+                  {`🛒 ${cartCount}`}
                 </li>
                 <li className=' px-2 '>
                   <NavLink
