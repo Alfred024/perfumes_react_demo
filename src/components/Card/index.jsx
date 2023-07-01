@@ -1,6 +1,10 @@
 import React from "react";
+import { AppContext } from "../../context";
+
 
 function Card({product, price, image, category}) {
+    const context = React.useContext(AppContext);
+
     return ( 
         <div className="relative flex flex-col w-80 h-72 m-0 bg-zinc-700 text-white ">
 
@@ -18,7 +22,13 @@ function Card({product, price, image, category}) {
             <p>{`${price}`}</p>
           </div>
 
-          <span className="deleteCardSpan">+</span>
+          <button 
+            className="deleteCardSpan"
+            onClick={() =>{
+              context.setCartCount(++context.cartCount);
+              localStorage.setItem('cartCount', context.cartCount.toString());
+            }}
+          >+</button>
         </div>
      );
 }
