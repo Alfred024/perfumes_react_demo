@@ -1,6 +1,9 @@
 import React from 'react';
 import { useRoutes, BrowserRouter } from 'react-router-dom'
 
+//Context
+import { AppProvider } from '../context';
+
 //Pages
 import { Home_page } from '../pages/Home_page';
 import { MyAccount } from '../pages/MyAccount';
@@ -27,9 +30,9 @@ const AppRoutes = () =>{
 }
 
 function App() {
-    
     return ( 
-      <BrowserRouter>
+      <AppProvider>
+        <BrowserRouter>
         <NavBar/>
 
         <Body_layout>
@@ -37,6 +40,7 @@ function App() {
         </Body_layout>
         
       </BrowserRouter>      
+      </AppProvider>
     );
 }
 
