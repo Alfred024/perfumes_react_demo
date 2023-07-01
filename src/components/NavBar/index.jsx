@@ -1,7 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
+import { AppContext } from "../../context";
 
-function NavBar({cartCount}) {
+function NavBar() {
+    const context = React.useContext(AppContext);
     const activeStyle = 'underline underline-offset-4';
 
     return ( 
@@ -38,7 +40,7 @@ function NavBar({cartCount}) {
                   </NavLink>
                 </li>
                 <li className=' px-2 '>
-                  {`🛒 ${cartCount}`}
+                  {`🛒 ${context.cartCount}`}
                 </li>
                 <li className=' px-2 '>
                   <NavLink

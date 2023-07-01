@@ -14,7 +14,6 @@ const AppProvider = ({children}) =>{
         }
     });
 
-    console.log('estado: '+cartCount);
     return(
         <AppContext.Provider
             value={{
