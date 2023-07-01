@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.cardsContainer{
+    display: grid;
+    place-items: center;
+    gap: 20px;
+    grid-template-columns: repeat(3, auto);
+}
+
+.deleteCardSpan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #373636;
+    border-radius: 100%;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 5px;
+    top: 10px;
+    font-weight: 900;    
+}

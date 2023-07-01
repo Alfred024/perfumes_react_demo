@@ -2,7 +2,7 @@ import React from 'react';
 
 const Body_layout = ({children}) => {
      return(
-        <div className=' bg-red-200 ' >
+        <div>
             {children}
         </div>
      );

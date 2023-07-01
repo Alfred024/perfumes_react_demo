@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom'
 
 function NavBar() {
-    const activeStyle = 'bg-red-100';
+    const activeStyle = 'underline underline-offset-4';
 
     return ( 
         <nav className='flex justify-between bg-neutral-100 p-2'>
