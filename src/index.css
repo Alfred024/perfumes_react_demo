@@ -4,6 +4,7 @@
 
 .cardsContainer{
     display: grid;
+    padding-inline: 20px;
     place-items: center;
     gap: 20px;
     grid-template-columns: repeat(3, auto);
@@ -18,7 +19,21 @@
     position: absolute;
     width: 40px;
     height: 40px;
-    right: 5px;
-    top: 10px;
+    right: -2px;
+    top: -2px;
     font-weight: 900;    
+}
+
+/* Tablet MediaQueries */
+@media (max-width:1050px) {
+    .cardsContainer{
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+/* Phone MediaQueries */
+@media (max-width:680px) {
+    .cardsContainer{
+        grid-template-columns: repeat(1, auto);
+    }
 }

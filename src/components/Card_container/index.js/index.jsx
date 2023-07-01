@@ -1,11 +1,29 @@
 import React from 'react';
+import { Card } from '../../Card';
 
-function Card_container({children}) {
-    const [consuming, setConsuming] = React.useState();
+function Card_container() {
 
+    const [cards, setCards] = React.useState(null);
+
+    React.useEffect(() => {
+        fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=27')
+            .then(response => response.json())
+            .then(data => setCards(data));
+    }, []);
+     
+    
     return(
         <div className='cardsContainer'>
-            {children}
+            {cards?.map(card =>(
+                <Card
+                    key={card.id}
+                    product = {card.title} 
+                    price = {card.price} 
+                    image = {card.images[0]} 
+                    category = {card.category.name}
+                />
+            ))}
+            
         </div>
     );
 }
