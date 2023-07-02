@@ -23,11 +23,11 @@ function NavBar() {
             <ul className='flex'>
                 <li className=' p-2  border-r border-l border-white'>
                   <NavLink
-                    to='/my-orders'
+                    to='/sign-in'
                     className={({isActive}) =>{
                       isActive ? activeStyle : undefined
                     }}>
-                      My Orders
+                      Sign In
                   </NavLink>
                 </li>
                 <li className=' p-2  border-r border-l border-white'>
@@ -42,20 +42,11 @@ function NavBar() {
                 <button 
                   className=' p-2  border-r border-l border-white'
                   onClick={() =>{
-                    context.setHideAside(false);
+                    //Vamos a mostrar el asideBar, pero mostraremos los productos guardados en el localStorage
+                    //context.setHideAside(false);
                   }}>
-                  {`🛒 ${context.cartCount}`}
+                  {`My Cart 🛒 ${context.cartCount}`}
                 </button>
-                <li className=' p-2  border-r border-l border-white'>
-                  <NavLink
-                    to='/sign-in'
-                    className={({isActive}) =>{
-                      isActive ? activeStyle : undefined
-                    }}>
-                      Sign In
-                  </NavLink>
-                </li>
-
             </ul>
         </nav>
      );

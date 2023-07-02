@@ -21,6 +21,7 @@ function Card_container() {
                     price = {card.price} 
                     image = {card.images[0]} 
                     category = {card.category.name}
+                    description = {card.description}
                 />
             ))}
             

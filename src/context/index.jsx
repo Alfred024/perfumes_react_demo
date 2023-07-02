@@ -15,6 +15,7 @@ const AppProvider = ({children}) =>{
     });
 
     const [hideAside, setHideAside] = React.useState(true);
+    const [cardSelected, setCardSelected] = React.useState({}); 
 
     return(
         <AppContext.Provider
@@ -23,6 +24,8 @@ const AppProvider = ({children}) =>{
                 setHideAside,
                 cartCount,
                 setCartCount,
+                cardSelected, 
+                setCardSelected,
             }}>
             {children}
         </AppContext.Provider>

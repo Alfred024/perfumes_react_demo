@@ -15,6 +15,7 @@ import { SignIn } from '../pages/SignIn';
 //Components
 import { NavBar } from '../components/NavBar';
 import { Body_layout } from '../components/Body_layout'
+import { Items_AsideBar } from '../components/Items_AsideBar/index.jsx';
 
 const AppRoutes = () =>{
   let routes = useRoutes([
@@ -37,6 +38,7 @@ function App() {
 
         <Body_layout>
           <AppRoutes/>
+          <Items_AsideBar/>
         </Body_layout>
         
       </BrowserRouter>      

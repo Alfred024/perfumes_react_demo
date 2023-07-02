@@ -2,11 +2,24 @@ import React from "react";
 import { AppContext } from "../../context";
 
 
-function Card({product, price, image, category}) {
+function Card({product, price, image, category, description}) {
     const context = React.useContext(AppContext);
 
     return ( 
-        <div className="relative flex flex-col w-80 h-72 m-0 bg-zinc-700 text-white ">
+        <div 
+          onClick={() =>{
+            context.setCardSelected(
+              {
+                "title": product,
+                "price": price,
+                "image": image,
+                "description": description
+              }
+            );
+            context.setHideAside(false);
+            console.log(context.cardSelected);
+          }}
+          className="cursor-pointer relative flex flex-col w-80 h-72 m-0 bg-zinc-700 text-white ">
 
           <div className="w-full h-4/5 relative">
             <img 
