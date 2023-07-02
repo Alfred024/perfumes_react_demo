@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.hideTag{
+    display: none;
+}
+
 .cardsContainer{
     display: grid;
     padding-inline: 20px;
@@ -31,7 +35,7 @@
     height: 100vh;
     top: 0px;
     z-index: 2;
-  }
+}
 
 /* Tablet MediaQueries */
 @media (max-width:1050px) {

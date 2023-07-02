@@ -39,9 +39,13 @@ function NavBar() {
                       My account
                   </NavLink>
                 </li>
-                <li className=' p-2  border-r border-l border-white'>
+                <button 
+                  className=' p-2  border-r border-l border-white'
+                  onClick={() =>{
+                    context.setHideAside(false);
+                  }}>
                   {`🛒 ${context.cartCount}`}
-                </li>
+                </button>
                 <li className=' p-2  border-r border-l border-white'>
                   <NavLink
                     to='/sign-in'

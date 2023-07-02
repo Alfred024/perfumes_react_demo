@@ -14,9 +14,13 @@ const AppProvider = ({children}) =>{
         }
     });
 
+    const [hideAside, setHideAside] = React.useState(true);
+
     return(
         <AppContext.Provider
             value={{
+                hideAside, 
+                setHideAside,
                 cartCount,
                 setCartCount,
             }}>
