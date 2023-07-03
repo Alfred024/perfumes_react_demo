@@ -14,7 +14,6 @@ function Card({product, price, image, category, description}) {
               alt="Imagén producto"
               className="w-full h-full" 
               onClick={() =>{
-                //console.log(context.productsSaved);
                 context.setCardSelected(
                   {
                     "title": product,
@@ -23,8 +22,8 @@ function Card({product, price, image, category, description}) {
                     "description": description
                   }
                 );
+                context.setShowDetail(true);
                 context.setHideAside(false);
-                //console.log(context.cardSelected);
               }}/> 
 
             <span className='absolute bottom-0 left-0 bg-white/60 rounded-lg text-white text-xs m-2 px-3 py-0.5'>{category}</span>
@@ -38,19 +37,20 @@ function Card({product, price, image, category, description}) {
           <button 
             className="addCardButton"
             onClick={() =>{
-            
+
               let productsAdded = context.productsSaved;
               const newProduct = {
                 "title": product,
                 "price": price,
                 "image": image,
-                "description": description
+                "description": description,
+                "index": productsAdded.length
               }
+
               productsAdded.push(newProduct);
               localStorage.setItem('productsSaved', JSON.stringify(productsAdded));
-              context.setProductsSaved(productsAdded);
-              //localStorage.setItem('cartCount', context.cartCount.toString());
-              //context.setCartCount(productsAdded.length);
+              let lengthX = productsAdded.length;
+              context.setCartCount(lengthX++);
             }}
           >
             ➕

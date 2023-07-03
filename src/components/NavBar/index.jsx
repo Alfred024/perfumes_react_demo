@@ -43,9 +43,10 @@ function NavBar() {
                   className=' p-2  border-r border-l border-white'
                   onClick={() =>{
                     //Vamos a mostrar el asideBar, pero mostraremos los productos guardados en el localStorage
-                    //context.setHideAside(false);
+                    context.setShowDetail(false);
+                    context.setHideAside(false);
                   }}>
-                  {`My Cart 🛒 ${context.cartCount}`}
+                    {`My Cart 🛒 ${context.cartCount}`}
                 </button>
             </ul>
         </nav>

@@ -5,17 +5,8 @@ import { createContext } from "react";
 const AppContext = createContext();
 
 const AppProvider = ({children}) =>{
-    const [cartCount, setCartCount] = React.useState(() =>{
-        const num = localStorage.getItem('cartCount');
-        if(!num){
-            localStorage.setItem('cartCount', '0');
-            return 0;
-        }else{
-            return num;
-        }
-    });
-
-
+    
+    //Para controlar el display del AsideBar
     const [hideAside, setHideAside] = React.useState(true);
 
     //Mostrar la descripción de las cartas
@@ -25,7 +16,7 @@ const AppProvider = ({children}) =>{
     const [productsSaved, setProductsSaved] = React.useState(() =>{
         let products = localStorage.getItem('productsSaved');
         if(products){
-            //console.log(products);
+            console.log('sal');
             return JSON.parse(products);
         }else{
             localStorage.setItem('productsSaved', '[]');
@@ -33,17 +24,25 @@ const AppProvider = ({children}) =>{
         }
     });
 
+    //Número de prooductos en el carro
+    const [cartCount, setCartCount] = React.useState(productsSaved.length);
+
+    //Evaluar si mostrará el detalle del producto o el carrito
+    const [showDetail, setShowDetail] = React.useState(true);
+
     return(
         <AppContext.Provider
             value={{
                 hideAside, 
                 setHideAside,
-                cartCount,
-                setCartCount,
                 cardSelected, 
                 setCardSelected,
                 productsSaved, 
                 setProductsSaved,
+                cartCount, 
+                setCartCount,
+                showDetail, 
+                setShowDetail
             }}>
             {children}
         </AppContext.Provider>
