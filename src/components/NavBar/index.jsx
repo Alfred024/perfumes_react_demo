@@ -7,9 +7,9 @@ function NavBar() {
     const activeStyle = 'underline underline-offset-4';
 
     return ( 
-        <nav className='flex justify-between bg-neutral-100 p-2'>
+        <nav className='flex justify-between bg-slate-900 text-white'>
             <ul className='flex'>
-                <li className=' px-2 '>
+                <li className=' p-2  border-r border-l border-white'>
                   <NavLink
                     to='/'
                     className={({isActive}) =>{
@@ -21,28 +21,7 @@ function NavBar() {
             </ul>
 
             <ul className='flex'>
-                <li className=' px-2 '>
-                  <NavLink
-                    to='/my-orders'
-                    className={({isActive}) =>{
-                      isActive ? activeStyle : undefined
-                    }}>
-                      My Orders
-                  </NavLink>
-                </li>
-                <li className=' px-2 '>
-                  <NavLink
-                    to='/my-account'
-                    className={({isActive}) =>{
-                      isActive ? activeStyle : undefined
-                    }}>
-                      My account
-                  </NavLink>
-                </li>
-                <li className=' px-2 '>
-                  {`🛒 ${context.cartCount}`}
-                </li>
-                <li className=' px-2 '>
+                <li className=' p-2  border-r border-l border-white'>
                   <NavLink
                     to='/sign-in'
                     className={({isActive}) =>{
@@ -51,7 +30,23 @@ function NavBar() {
                       Sign In
                   </NavLink>
                 </li>
-
+                <li className=' p-2  border-r border-l border-white'>
+                  <NavLink
+                    to='/my-account'
+                    className={({isActive}) =>{
+                      isActive ? activeStyle : undefined
+                    }}>
+                      My account
+                  </NavLink>
+                </li>
+                <button 
+                  className=' p-2  border-r border-l border-white'
+                  onClick={() =>{
+                    //Vamos a mostrar el asideBar, pero mostraremos los productos guardados en el localStorage
+                    //context.setHideAside(false);
+                  }}>
+                  {`My Cart 🛒 ${context.cartCount}`}
+                </button>
             </ul>
         </nav>
      );

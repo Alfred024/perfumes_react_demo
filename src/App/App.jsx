@@ -2,8 +2,8 @@ import React from 'react';
 import { useRoutes, BrowserRouter } from 'react-router-dom'
 
 //Context
-import { AppContext, AppProvider } from '../context';
- 
+import { AppProvider } from '../context';
+
 //Pages
 import { Home_page } from '../pages/Home_page';
 import { MyAccount } from '../pages/MyAccount';
@@ -15,6 +15,7 @@ import { SignIn } from '../pages/SignIn';
 //Components
 import { NavBar } from '../components/NavBar';
 import { Body_layout } from '../components/Body_layout'
+import { Items_AsideBar } from '../components/Items_AsideBar/index.jsx';
 
 const AppRoutes = () =>{
   let routes = useRoutes([
@@ -30,28 +31,17 @@ const AppRoutes = () =>{
 }
 
 function App() {
-    //const contextVar = React.useContext(AppContext);
-    //console.log(contextVar);
-
     return ( 
       <AppProvider>
-        <AppContext.Consumer>
-        {({
-            cartCount,
-        }) =>(
+        <BrowserRouter>
+        <NavBar/>
 
-            <BrowserRouter>
-              <NavBar
-                cartCount={cartCount}
-              />
-
-              <Body_layout>
-                <AppRoutes/>
-              </Body_layout>
-            
-            </BrowserRouter>    
-        )}
-        </AppContext.Consumer>  
+        <Body_layout>
+          <AppRoutes/>
+          <Items_AsideBar/>
+        </Body_layout>
+        
+      </BrowserRouter>      
       </AppProvider>
     );
 }
