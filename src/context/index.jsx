@@ -25,7 +25,7 @@ const AppProvider = ({children}) =>{
     const [productsSaved, setProductsSaved] = React.useState(() =>{
         let products = localStorage.getItem('productsSaved');
         if(products){
-            console.log(products);
+            //console.log(products);
             return JSON.parse(products);
         }else{
             localStorage.setItem('productsSaved', '[]');
@@ -33,11 +33,6 @@ const AppProvider = ({children}) =>{
         }
     });
 
-    // React.useEffect(() =>{
-    //     console.log('effect');
-    //     //localStorage.setItem('productsSaved', productsSaved.toString());
-    // }, [productsSaved]);
-    
     return(
         <AppContext.Provider
             value={{
