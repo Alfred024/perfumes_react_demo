@@ -39,6 +39,15 @@ function Card({product, price, image, category, description}) {
             onClick={() =>{
               context.setCartCount(++context.cartCount);
               localStorage.setItem('cartCount', context.cartCount.toString());
+              let productsAdded = context.productsSaved;
+              const newProduct = {
+                "title": product,
+                "price": price,
+                "image": image,
+                "description": description
+              }
+              productsAdded.push(newProduct);
+              localStorage.setItem('productsSaved', JSON.stringify(productsAdded));
             }}
           >
             ➕

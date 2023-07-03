@@ -1,3 +1,4 @@
+import { stringify } from 'postcss';
 import React from 'react';
 import { createContext } from "react";
 
@@ -14,9 +15,29 @@ const AppProvider = ({children}) =>{
         }
     });
 
+
     const [hideAside, setHideAside] = React.useState(true);
+
+    //Mostrar la descripción de las cartas
     const [cardSelected, setCardSelected] = React.useState({}); 
 
+    //Guardar los productos añadidos en el localStorage 
+    const [productsSaved, setProductsSaved] = React.useState(() =>{
+        let products = localStorage.getItem('productsSaved');
+        if(products){
+            console.log(products);
+            return JSON.parse(products);
+        }else{
+            localStorage.setItem('productsSaved', '[]');
+            return [];
+        }
+    });
+
+    // React.useEffect(() =>{
+    //     console.log('effect');
+    //     //localStorage.setItem('productsSaved', productsSaved.toString());
+    // }, [productsSaved]);
+    
     return(
         <AppContext.Provider
             value={{
@@ -26,6 +47,8 @@ const AppProvider = ({children}) =>{
                 setCartCount,
                 cardSelected, 
                 setCardSelected,
+                productsSaved, 
+                setProductsSaved,
             }}>
             {children}
         </AppContext.Provider>
