@@ -14,7 +14,7 @@
     grid-template-columns: repeat(3, auto);
 }
 
-.deleteCardSpan{
+.addCardButton{
     display: flex;
     align-items: center;
     justify-content: center;

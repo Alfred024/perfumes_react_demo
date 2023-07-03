@@ -18,7 +18,9 @@ function Product_detail() {
 					{`$ ${context.cardSelected.price}`}
 				</p>
 			</div>
-			<p className="font-light text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium ut repellendus aspernatur ipsam officiis </p>
+			<p className="font-light text-sm">
+			{`$ ${context.cardSelected.description}`}
+			</p>
         </div>
     );
 }

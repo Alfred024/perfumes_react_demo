@@ -35,12 +35,14 @@ function Card({product, price, image, category, description}) {
           </div>
 
           <button 
-            className="deleteCardSpan"
+            className="addCardButton"
             onClick={() =>{
               context.setCartCount(++context.cartCount);
               localStorage.setItem('cartCount', context.cartCount.toString());
             }}
-          >+</button>
+          >
+            ➕
+          </button>
         </div>
      );
 }
