@@ -1,7 +1,13 @@
 import React from "react";
+
+//Components
 import { AppContext } from "../../context";
 import { Product_detail } from "../Product_detail";
 import { Cart_item } from "../Cart_item";
+
+//Functions
+import { totalPrice } from "../../utils";
+
 
 function Items_AsideBar() {
     const context = React.useContext(AppContext);
@@ -18,12 +24,11 @@ function Items_AsideBar() {
             </div>
         </div>
 
-        {/* <Product_detail/> */}
         {
             context.showDetail ? (
                 <Product_detail/>
             ):(
-                <>
+              <>
                   <div className="cartItemsContainer">
                     {
                        context.productsSaved?.map((cartItem, index) =>(
@@ -41,7 +46,7 @@ function Items_AsideBar() {
                   <div className="flex flex-col justify-center m-2 p-2">
                     <div className="flex justify-between">
                       <p className="font-medium text-xl mb-2">Total:</p>
-                      <p className="font-medium text-xl mb-2">{`$$$`}</p>
+                      <p className="font-medium text-xl mb-2">{`$${totalPrice(context.productsSaved)}`}</p>
                     </div>
 
                     <button 
@@ -52,8 +57,7 @@ function Items_AsideBar() {
                       Checkout
                     </button>
                   </div>
-                </>
-                
+                </>   
             )
         }
         

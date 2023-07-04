@@ -30,6 +30,8 @@ const AppProvider = ({children}) =>{
     //Evaluar si mostrará el detalle del producto o el carrito
     const [showDetail, setShowDetail] = React.useState(true);
 
+    //Guaradar los pedidos en un array de
+
     return(
         <AppContext.Provider
             value={{
