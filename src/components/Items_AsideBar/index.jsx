@@ -29,7 +29,7 @@ function Items_AsideBar() {
                 <Product_detail/>
             ):(
               <>
-                  <div className="cartItemsContainer">
+              <div className="cartItemsContainer">
                     {
                        context.productsSaved?.map((cartItem, index) =>(
                             <Cart_item
@@ -41,7 +41,7 @@ function Items_AsideBar() {
                             />
                         ))
                     }
-                  </div>
+                  
 
                   <div className="flex flex-col justify-center m-2 p-2">
                     <div className="flex justify-between">
@@ -57,6 +57,7 @@ function Items_AsideBar() {
                       Checkout
                     </button>
                   </div>
+                </div>
                 </>   
             )
         }

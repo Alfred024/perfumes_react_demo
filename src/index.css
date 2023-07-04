@@ -28,19 +28,12 @@
     font-weight: 900;    
 }
 
-/* .scrollable-cards {
-	overflow: scroll;
-}
-
-.scrollable-cards {
-  scrollbar-width: auto;
-  scrollbar-color: #141414 #ffffff;
-} */
-/* .cartItemsContainer{
-    overflow: scroll;
-    scrollbar-width: auto;
+.cartItemsContainer {
+    max-height: 500px; 
+    overflow-y: auto;
+    scrollbar-width: thin;
     scrollbar-color: #141414 #ffffff;
-} */
+}
 
 .itemsAsideBar {
     width: 320px;
