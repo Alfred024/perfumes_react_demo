@@ -28,6 +28,20 @@
     font-weight: 900;    
 }
 
+/* .scrollable-cards {
+	overflow: scroll;
+}
+
+.scrollable-cards {
+  scrollbar-width: auto;
+  scrollbar-color: #141414 #ffffff;
+} */
+/* .cartItemsContainer{
+    overflow: scroll;
+    scrollbar-width: auto;
+    scrollbar-color: #141414 #ffffff;
+} */
+
 .itemsAsideBar {
     width: 320px;
     /* height: calc(100vh - 40px); */
@@ -37,6 +51,10 @@
     z-index: 2;
 }
 
+.checkoutButton{
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* Tablet MediaQueries */
 @media (max-width:1050px) {

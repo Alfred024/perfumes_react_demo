@@ -5,7 +5,6 @@ import { Cart_item } from "../Cart_item";
 
 function Items_AsideBar() {
     const context = React.useContext(AppContext);
-    //const products = context.productsSaved;
 
     return(
     <aside className={`${context.hideAside ? 'hideTag' : ''} itemsAsideBar flex flex-col fixed right-0 border-2 border-black bg-white`}>
@@ -24,15 +23,37 @@ function Items_AsideBar() {
             context.showDetail ? (
                 <Product_detail/>
             ):(
-                context.productsSaved?.map((cartItem, index) =>(
-                    <Cart_item
-                        key={index}
-                        index={index}
-                        title={cartItem.title}
-                        price={cartItem.price}
-                        img={cartItem.image}
-                    />
-                ))
+                <>
+                  <div className="cartItemsContainer">
+                    {
+                       context.productsSaved?.map((cartItem, index) =>(
+                            <Cart_item
+                                key={index}
+                                index={index}
+                                title={cartItem.title}
+                                price={cartItem.price}
+                                img={cartItem.image}
+                            />
+                        ))
+                    }
+                  </div>
+
+                  <div className="flex flex-col justify-center m-2 p-2">
+                    <div className="flex justify-between">
+                      <p className="font-medium text-xl mb-2">Total:</p>
+                      <p className="font-medium text-xl mb-2">{`$$$`}</p>
+                    </div>
+
+                    <button 
+                      onClick={() =>{
+                        //Función que guarde las órdenes en un array de arrays, cada uno tendrá lasórdenes de cada pedido por separado
+                      }}
+                      className="w-full p-2 bg-black text-cyan-50">
+                      Checkout
+                    </button>
+                  </div>
+                </>
+                
             )
         }
         
