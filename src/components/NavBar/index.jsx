@@ -48,6 +48,15 @@ function NavBar() {
                   }}>
                     {`My Cart 🛒 ${context.cartCount}`}
                 </button>
+                <li className=' p-2  border-r border-l border-white'>
+                  <NavLink
+                    to='/my-orders'
+                    className={({isActive}) =>{
+                      isActive ? activeStyle : undefined
+                    }}>
+                      My orders
+                  </NavLink>
+                </li>
             </ul>
         </nav>
      );

@@ -12,6 +12,15 @@ import { totalPrice } from "../../utils";
 function Items_AsideBar() {
     const context = React.useContext(AppContext);
 
+    const saveOrder= (items) =>{
+      context.setMyOrders([...context.myOrders, items]);
+      //Resetea los productos que se muestran en el aside
+      localStorage.setItem('productsSaved', '[]');
+      context.setProductsSaved([]);
+      context.setCartCount(0);
+      
+    }
+
     return(
     <aside className={`${context.hideAside ? 'hideTag' : ''} itemsAsideBar flex flex-col fixed right-0 border-2 border-black bg-white`}>
         <div className='bg-slate-900 text-white flex justify-between items-center p-6'>
@@ -51,14 +60,14 @@ function Items_AsideBar() {
 
                     <button 
                       onClick={() =>{
-                        //Función que guarde las órdenes en un array de arrays, cada uno tendrá lasórdenes de cada pedido por separado
+                        saveOrder(context.productsSaved);
                       }}
                       className="w-full p-2 bg-black text-cyan-50">
                       Checkout
                     </button>
                   </div>
                 </div>
-                </>   
+                </>     
             )
         }
         

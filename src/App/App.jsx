@@ -7,7 +7,6 @@ import { AppProvider } from '../context';
 //Pages
 import { Home_page } from '../pages/Home_page';
 import { MyAccount } from '../pages/MyAccount';
-import { MyOrder } from '../pages/MyOrder';
 import { MyOrders } from '../pages/MyOrders';
 import { NotFound } from '../pages/NotFound';
 import { SignIn } from '../pages/SignIn';
@@ -21,7 +20,6 @@ const AppRoutes = () =>{
   let routes = useRoutes([
     {path: '/', element: <Home_page/>},
     {path: '/my-account', element: <MyAccount/>},
-    {path: '/my-order', element: <MyOrder/>},
     {path: '/my-orders', element: <MyOrders/>},
     {path: '/sign-in', element: <SignIn/>},
     {path: '/*', element: <NotFound/>},

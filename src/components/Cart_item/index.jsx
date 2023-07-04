@@ -25,7 +25,7 @@ function Cart_item({index, title, price, img}) {
 						//context.setProductsSaved(products);
 						//AQUÍ ES DONDE DEBE CAMBIAR EL VALOR DEL ESTADO CON EL SET PARA RERENDERIZAR
 					}}
-					className="w-10 h-10 bg-slate-900 absolute right-0 bottom-9 z-10 rounded-full">
+					className="w-10 h-10 bg-slate-900 absolute right-0 top-0 z-10 rounded-full">
 					✖️
 				</button>
 			 </div> 

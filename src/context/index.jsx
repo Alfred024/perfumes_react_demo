@@ -1,4 +1,3 @@
-import { stringify } from 'postcss';
 import React from 'react';
 import { createContext } from "react";
 
@@ -16,7 +15,6 @@ const AppProvider = ({children}) =>{
     const [productsSaved, setProductsSaved] = React.useState(() =>{
         let products = localStorage.getItem('productsSaved');
         if(products){
-            console.log('sal');
             return JSON.parse(products);
         }else{
             localStorage.setItem('productsSaved', '[]');
@@ -31,6 +29,7 @@ const AppProvider = ({children}) =>{
     const [showDetail, setShowDetail] = React.useState(true);
 
     //Guaradar los pedidos en un array de
+    const [myOrders, setMyOrders] = React.useState([]);
 
     return(
         <AppContext.Provider
@@ -44,7 +43,9 @@ const AppProvider = ({children}) =>{
                 cartCount, 
                 setCartCount,
                 showDetail, 
-                setShowDetail
+                setShowDetail,
+                myOrders, 
+                setMyOrders,
             }}>
             {children}
         </AppContext.Provider>
