@@ -28,8 +28,16 @@ const AppProvider = ({children}) =>{
     //Evaluar si mostrará el detalle del producto o el carrito
     const [showDetail, setShowDetail] = React.useState(true);
 
-    //Guaradar los pedidos en un array de
-    const [myOrders, setMyOrders] = React.useState([]);
+    //Guaradar las órdenes en un array de arrays
+    const [myOrders, setMyOrders] = React.useState(() =>{
+        let orders = localStorage.getItem('ordersSaved');
+        if(orders){
+            return JSON.parse(orders);
+        }else{
+            localStorage.setItem('ordersSaved', '[]');
+            return [];
+        }
+    });
 
     return(
         <AppContext.Provider

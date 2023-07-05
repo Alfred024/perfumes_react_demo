@@ -14,6 +14,10 @@ function Items_AsideBar() {
 
     const saveOrder= (items) =>{
       context.setMyOrders([...context.myOrders, items]);
+      console.log(context.myOrders);
+
+      //Está el problema que agarra el valor del estado uno antes de lo que se espera
+      //localStorage.setItem('ordersSaved', `${context.myOrders}`);
       localStorage.setItem('productsSaved', '[]');
       context.setProductsSaved([]);
       context.setCartCount(0);

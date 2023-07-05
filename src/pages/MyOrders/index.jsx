@@ -6,13 +6,18 @@ import { AppContext } from "../../context";
 function MyOrders() {
     const context = React.useContext(AppContext);
     const ordersSaved = context.myOrders;
+    let numOrder = 0;
 
     return ( 
         <>
           {
             ordersSaved.length>0 ?(
                 ordersSaved.map(() =>(
-                  <Order/>
+                  <Order
+                    key={numOrder+1}
+                    index={numOrder}
+                    numOfOrder={++numOrder}
+                  />
                 ))
             ):(
               <div>
