@@ -53,15 +53,20 @@
 
 /* MadiaQuerie para ajustar el OrderItem en  */
 @media (max-width:800px) {
-    .infoOrderItem{
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-        grid-template-rows: repeat(2, auto);
+    .orderContainer{
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
-
-    .infoOrderItem p{
-        font-size: x-small;
+    .orderItem{
+        flex-direction: column;
+        width: fit-content;
     }
+    .orderItem img{
+        width: 100%;
+    }
+    
 }
 /* Phone MediaQueries */
 @media (max-width:680px) {

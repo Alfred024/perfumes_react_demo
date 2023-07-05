@@ -5,7 +5,7 @@ function Order_item({title, price, decription, image, orderNum, itemIndex}) {
     const context = React.useContext(AppContext); 
 
     return(
-        <div className="relative flex w-fit m-3 bg-gray-100 ">
+        <div className="orderItem relative flex w-fit m-3 bg-gray-100 ">
           <img 
             className=" w-1/3"
             src={`${image}`} alt="" />
