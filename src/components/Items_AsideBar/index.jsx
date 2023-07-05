@@ -14,11 +14,9 @@ function Items_AsideBar() {
 
     const saveOrder= (items) =>{
       context.setMyOrders([...context.myOrders, items]);
-      //Resetea los productos que se muestran en el aside
       localStorage.setItem('productsSaved', '[]');
       context.setProductsSaved([]);
       context.setCartCount(0);
-      
     }
 
     return(
