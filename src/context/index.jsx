@@ -39,7 +39,6 @@ const AppProvider = ({children}) =>{
         }
     });
 
-    const [temp, setTemp] = React.useState(0);
     return(
         <AppContext.Provider
             value={{
@@ -55,8 +54,6 @@ const AppProvider = ({children}) =>{
                 setShowDetail,
                 myOrders, 
                 setMyOrders,
-                temp, 
-                setTemp,
             }}>
             {children}
         </AppContext.Provider>

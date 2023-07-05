@@ -9,7 +9,7 @@ function MyOrders() {
     let numOrder = 0;
 
     return ( 
-        <>
+        <div className='myOrdersPage'>
           {
            context.myOrders.length >0 ?(
                 ordersSaved.map(() =>(
@@ -25,7 +25,7 @@ function MyOrders() {
               </div>
             )
           }
-        </>
+        </div>
     );
 }
 

@@ -1,7 +1,7 @@
 import React from "react";  
 import { AppContext } from "../../context";
 
-function Order_item({title, price, decription, image, orderNum, itemIndex}) {
+function Order_item({setNumItems, title, price, decription, image, orderNum, itemIndex}) {
     const context = React.useContext(AppContext); 
 
     return(
@@ -24,7 +24,7 @@ function Order_item({title, price, decription, image, orderNum, itemIndex}) {
               let newOrders = context.myOrders;
               newOrders[orderNum].splice(itemIndex,1);
               context.setMyOrders(newOrders);
-              //context.setTemp(itemIndex);
+              setNumItems(newOrders[orderNum].length);
             }}
             className="w-10 h-10 bg-slate-900 absolute right-0 top-0 z-10 ">
             ✖️

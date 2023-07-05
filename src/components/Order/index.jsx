@@ -9,9 +9,10 @@ import { totalPrice } from "../../utils";
 function Order({index, numOfOrder}) {
     const context = React.useContext(AppContext); 
     const [hideProducts, setHideProducts] = React.useState(false);
+    const [numItems , setNumItems] = React.useState(context.myOrders[index].length);
 
     return(
-      context.myOrders[index].length >0 ? (
+      context.myOrders.length >0 ? (
         <div className="orderContainer w-1/2 border border-slate-900 my-5 mx-auto">
 
           <div className="flex justify-between bg-slate-900 text-white p-4">
@@ -30,13 +31,14 @@ function Order({index, numOfOrder}) {
               <p>{`Total: $${totalPrice(context.myOrders[index])}`}</p>
             </div>
             
-            <p>{`Number of items: ${context.myOrders[index].length}`}</p>
+            <p>{`Number of items: ${numItems}`}</p>
           </div>
 
           <div className={`orders ${hideProducts? 'hideTag':''} p-4`}>
             {
               context.myOrders[index].map((product, productIndex) =>(
                 <Order_item
+                  setNumItems = {setNumItems}
                   key={`${numOfOrder}${productIndex}`}
                   title={product.title}
                   price={product.price}
