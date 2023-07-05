@@ -11,7 +11,7 @@ function MyOrders() {
     return ( 
         <>
           {
-            ordersSaved.length>0 ?(
+           context.myOrders.length >0 ?(
                 ordersSaved.map(() =>(
                   <Order
                     key={numOrder+1}
@@ -21,7 +21,7 @@ function MyOrders() {
                 ))
             ):(
               <div>
-                Aún no hay órdenes
+                 Aún no hay órdenes
               </div>
             )
           }

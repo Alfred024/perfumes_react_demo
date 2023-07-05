@@ -51,6 +51,18 @@
     }
 }
 
+/* MadiaQuerie para ajustar el OrderItem en  */
+@media (max-width:800px) {
+    .infoOrderItem{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
+    }
+
+    .infoOrderItem p{
+        font-size: x-small;
+    }
+}
 /* Phone MediaQueries */
 @media (max-width:680px) {
     .cardsContainer{
