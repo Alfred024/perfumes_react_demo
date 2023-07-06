@@ -73,7 +73,7 @@ function NavBar() {
         </nav>
 
         <div 
-          className={`navBarVertical ${hideVerticalNav ? 'hideTag' : 'flex'} w-1/2 h-full absolute bg-slate-900 text-white right-0 z-50`}>
+          className={`navBarVertical ${hideVerticalNav ? 'hideTag' : 'flex'} w-1/2 h-full absolute bg-slate-900 text-white right-0 z-40`}>
           <li className='flex justify-center p-2  border-r border border-white'>
             <NavLink
                 to='/sign-in'
@@ -98,6 +98,7 @@ function NavBar() {
               onClick={() =>{
                 context.setShowDetail(false);
                 context.setHideAside(false);
+                context.setHideVerticalNav(true);
               }}>
                 <i class="fa-solid fa-cart-shopping mr-1"></i>
                 {`${context.cartCount}`}

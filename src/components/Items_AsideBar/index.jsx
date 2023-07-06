@@ -24,7 +24,7 @@ function Items_AsideBar() {
     }
 
     return(
-    <aside className={`${context.hideAside ? 'hideTag' : ''} itemsAsideBar flex flex-col fixed right-0 border-2 border-black bg-white`}>
+    <aside className={`${context.hideAside ? 'hideTag' : ''} itemsAsideBar flex flex-col fixed right-0 border-2 border-black bg-white z-50`}>
         <div className='bg-slate-900 text-white flex justify-between items-center p-6'>
             <h2 className='font-medium text-xl'>{`${context.showDetail?'Product detail':'Cart'}`}</h2>
             <div>
@@ -39,7 +39,6 @@ function Items_AsideBar() {
             context.showDetail ? (
                 <Product_detail/>
             ):(
-              <>
               <div className="cartItemsContainer">
                     {
                        context.productsSaved?.map((cartItem, index) =>(
@@ -69,7 +68,6 @@ function Items_AsideBar() {
                     </button>
                   </div>
                 </div>
-                </>     
             )
         }
         

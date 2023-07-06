@@ -44,7 +44,6 @@ li{
     height: fit-content;
     overflow: auto;
     top: 0px;
-    z-index: 2;
 }
 
 /* Tablet MediaQueries */

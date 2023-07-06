@@ -7,6 +7,10 @@ function Home_page() {
     return ( 
       <>
         <SearchBar/>
+          <div className='font-light text-sm ml-10'>
+            All products
+          </div>
+          //Componente que despliega las categorías
         <Card_container/>
       </>      
     );

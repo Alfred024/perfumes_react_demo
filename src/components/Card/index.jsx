@@ -26,7 +26,7 @@ function Card({product, price, image, category, description}) {
                 context.setHideAside(false);
               }}/> 
 
-            <span className='absolute bottom-0 left-0 bg-white/60 rounded-lg text-white text-xs m-2 px-3 py-0.5'>{category}</span>
+            
           </div>    
 
           <div className=" w-full h-fit p-1 ">
@@ -44,6 +44,7 @@ function Card({product, price, image, category, description}) {
                 "price": price,
                 "image": image,
                 "description": description,
+                "category": category, 
                 "index": productsAdded.length
               }
 
@@ -55,6 +56,8 @@ function Card({product, price, image, category, description}) {
           >
             <i className="fa-solid fa-plus"></i>
           </button>
+
+          <span className='absolute bottom-0 right-0 bg-white/60 rounded-lg text-white text-xs m-2 px-3 py-0.5'>{category}</span>
         </div>
      );
 }
