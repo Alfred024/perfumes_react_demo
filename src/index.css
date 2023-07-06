@@ -52,7 +52,15 @@
 }
 
 /* MadiaQuerie para ajustar el OrderItem en  */
-@media (max-width:800px) {
+@media (max-width:850px) {
+
+    .myOrdersPage{
+        flex-direction: column;
+    }
+    .order{
+        width: 100%;
+        place-items: center;
+    }
     .orderContainer{
         width: 350px;
         display: flex;
@@ -65,6 +73,10 @@
     }
     .orderItem img{
         width: 100%;
+    }
+
+    .infoOrders{
+        width: 80%;
     }
     
 }

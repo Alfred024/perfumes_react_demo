@@ -12,8 +12,8 @@ function Order({index, numOfOrder}) {
     const [numItems , setNumItems] = React.useState(context.myOrders[index].length);
 
     return(
-      context.myOrders.length >0 ? (
-        <div className="orderContainer w-1/2 border border-slate-900 my-5 mx-auto">
+      context.myOrders[index].length >0 ? (
+        <div className="orderContainer w-full border border-slate-900 my-3">
 
           <div className="flex justify-between bg-slate-900 text-white p-4">
             <p>{`Order ID: ${numOfOrder}`}</p>
@@ -53,7 +53,9 @@ function Order({index, numOfOrder}) {
           
         </div>
       ) : (
-        <></>
+        <>
+          
+        </>
       )
       
     );
