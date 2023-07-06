@@ -1,20 +1,13 @@
 import React from 'react';
 import { Card } from '../../Card';
+import { AppContext } from '../../../context';
 
 function Card_container() {
-
-    const [cards, setCards] = React.useState(null);
-
-    React.useEffect(() => {
-        fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=27')
-            .then(response => response.json())
-            .then(data => setCards(data));
-    }, []);
-     
+    const context = React.useContext(AppContext);
     
     return(
         <div className='cardsContainer'>
-            {cards?.map(card =>(
+            {context.cards?.map(card =>(
                 <Card
                     key={card.id}
                     product = {card.title} 

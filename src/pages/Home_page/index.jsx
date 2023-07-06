@@ -1,11 +1,12 @@
 import React from 'react';
+
+import { SearchBar } from '../../components/SearchBar/index.jsx';
 import { Card_container } from '../../components/Card_container/index.js';
-//import { Items_AsideBar } from '../../components/Items_AsideBar/index.jsx';
 
 function Home_page() {
     return ( 
       <>
-        Home section
+        <SearchBar/>
         <Card_container/>
       </>      
     );

@@ -1,3 +1,4 @@
+import { data } from 'autoprefixer';
 import React from 'react';
 import { createContext } from "react";
 
@@ -5,6 +6,26 @@ const AppContext = createContext();
 
 const AppProvider = ({children}) =>{
     
+    //Para el buscador de las Cards
+    const [titleTyped, setTitleTyped] = React.useState('');
+
+    //Carrds consumidas desde la API
+    const [cards, setCards] = React.useState(null);
+
+    React.useEffect(() => {
+        if(titleTyped != ''){
+            fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=27')
+            .then(response => response.json())
+            .then(item => item.filter(x => x.title.toLowerCase().includes(titleTyped.toLowerCase())))
+            .then(res => setCards(res));
+        }else{
+            fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=27')
+            .then(response => response.json())
+            .then(data => setCards(data));
+        }
+        
+    }, [titleTyped]);
+
     //Para controlar el display del AsideBar
     const [hideAside, setHideAside] = React.useState(true);
 
@@ -42,6 +63,8 @@ const AppProvider = ({children}) =>{
     return(
         <AppContext.Provider
             value={{
+                cards, 
+                setCards,
                 hideAside, 
                 setHideAside,
                 cardSelected, 
@@ -54,6 +77,8 @@ const AppProvider = ({children}) =>{
                 setShowDetail,
                 myOrders, 
                 setMyOrders,
+                titleTyped, 
+                setTitleTyped,
             }}>
             {children}
         </AppContext.Provider>
