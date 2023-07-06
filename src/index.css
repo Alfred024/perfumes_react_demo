@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.hideTag{
+li{
+    list-style: none;
+}
+.hideTag, .displayVerticalNav{
     display: none;
 }
 
@@ -82,6 +85,15 @@
 }
 /* Phone MediaQueries */
 @media (max-width:680px) {
+    .displayVerticalNav{
+        display: block;
+    }
+    .navBarHorizontal{
+        display: none;
+    }
+    .navBarVertical{
+        flex-direction: column;
+    }
     .cardsContainer{
         grid-template-columns: repeat(1, auto);
     }

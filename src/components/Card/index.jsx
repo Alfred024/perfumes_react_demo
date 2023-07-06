@@ -53,7 +53,7 @@ function Card({product, price, image, category, description}) {
               context.setCartCount(lengthX++);
             }}
           >
-            ➕
+            <i className="fa-solid fa-plus"></i>
           </button>
         </div>
      );
