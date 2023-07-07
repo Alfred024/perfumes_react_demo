@@ -5,26 +5,37 @@ import { createContext } from "react";
 const AppContext = createContext();
 
 const AppProvider = ({children}) =>{
-    
+    //Cards redered by the category value
+    const [categoryName, setCategoryName] = React.useState('');
+
     //Para el buscador de las Cards
     const [titleTyped, setTitleTyped] = React.useState('');
 
-    //Carrds consumidas desde la API
+    //Cards consumidas desde la API
     const [cards, setCards] = React.useState(null);
 
     React.useEffect(() => {
-        if(titleTyped != ''){
-            fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=27')
-            .then(response => response.json())
-            .then(item => item.filter(x => x.title.toLowerCase().includes(titleTyped.toLowerCase())))
-            .then(res => setCards(res));
+        if(!categoryName || titleTyped){
+            if(titleTyped != ''){
+                fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=27')
+                .then(response => response.json())
+                .then(item => item.filter(x => x.title.toLowerCase().includes(titleTyped.toLowerCase())))
+                .then(res => setCards(res));
+            }else{
+                fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=27')
+                .then(response => response.json())
+                .then(data => setCards(data));
+            }
         }else{
+            console.log(categoryName);
             fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=27')
-            .then(response => response.json())
-            .then(data => setCards(data));
+                .then(response => response.json())
+                .then(item => item.filter(x => x.category.name.toLowerCase().includes(categoryName.toLowerCase())))
+                //.then(data => console.log(data))
+                .then(res => setCards(res));
         }
         
-    }, [titleTyped]);
+    }, [titleTyped, categoryName]);
 
     //Para controlar el display del AsideBar
     const [hideAside, setHideAside] = React.useState(true);
@@ -79,6 +90,8 @@ const AppProvider = ({children}) =>{
                 setMyOrders,
                 titleTyped, 
                 setTitleTyped,
+                categoryName, 
+                setCategoryName,
             }}>
             {children}
         </AppContext.Provider>

@@ -38,7 +38,7 @@ function NavBar() {
                     className={({isActive}) =>{
                       isActive ? activeStyle : undefined
                     }}>
-                      <i class="fa-solid fa-user mr-1"></i>
+                      <i className="fa-solid fa-user mr-1"></i>
                       My account
                   </NavLink>
                 </li>
@@ -58,7 +58,7 @@ function NavBar() {
                     className={({isActive}) =>{
                       isActive ? activeStyle : undefined
                     }}>
-                      <i class="fa-solid fa-bag-shopping mr-1"></i>
+                      <i className="fa-solid fa-bag-shopping mr-1"></i>
                       My orders
                   </NavLink>
                 </li>
@@ -68,7 +68,7 @@ function NavBar() {
                 setHideVerticalNav(!hideVerticalNav);
               }}
               className='displayVerticalNav p-2 '>
-                <i class="fa-solid fa-bars"></i>
+                <i className="fa-solid fa-bars"></i>
             </button>
         </nav>
 
@@ -89,7 +89,7 @@ function NavBar() {
                 className={({isActive}) =>{
                   isActive ? activeStyle : undefined
                 }}>
-                  <i class="fa-solid fa-user mr-1"></i>
+                  <i className="fa-solid fa-user mr-1"></i>
                   My account
             </NavLink>
           </li>
@@ -100,7 +100,7 @@ function NavBar() {
                 context.setHideAside(false);
                 context.setHideVerticalNav(true);
               }}>
-                <i class="fa-solid fa-cart-shopping mr-1"></i>
+                <i className="fa-solid fa-cart-shopping mr-1"></i>
                 {`${context.cartCount}`}
                 My cart
           </button>
@@ -110,7 +110,7 @@ function NavBar() {
                 className={({isActive}) =>{
                   isActive ? activeStyle : undefined
                 }}>
-                  <i class="fa-solid fa-bag-shopping mr-1"></i>
+                  <i className="fa-solid fa-bag-shopping mr-1"></i>
                   My orders
             </NavLink>
           </li>
