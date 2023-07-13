@@ -11,9 +11,9 @@ function NavBar() {
     <>
         <nav className='flex justify-between bg-slate-900 text-white'>
             <ul className='flex'>
-                <li className=' p-2  border-r border-l border-white'>
+                <li className={`${context.signIn ? '' : 'hideTag'} p-2  border-r border-l border-white`}>
                   <NavLink
-                    to='/'
+                    to='/home'
                     className={({isActive}) =>{
                       isActive ? activeStyle : undefined
                     }}>
@@ -23,16 +23,16 @@ function NavBar() {
             </ul>
 
             <ul className='flex navBarHorizontal'>
-                <li className=' p-2  border-r border-l border-white'>
+                <li className={`${context.signIn ? '' : 'hideTag'} p-2  border-r border-l border-white`}>
                   <NavLink
-                    to='/sign-in'
+                    to='/'
                     className={({isActive}) =>{
                       isActive ? activeStyle : undefined
                     }}>
                       Sign Out
                   </NavLink>
                 </li>
-                <li className=' p-2  border-r border-l border-white'>
+                <li className={`${context.signIn ? '' : 'hideTag'} p-2  border-r border-l border-white`}>
                   <NavLink
                     to='/my-account'
                     className={({isActive}) =>{
@@ -43,7 +43,7 @@ function NavBar() {
                   </NavLink>
                 </li>
                 <button 
-                  className=' p-2  border-r border-l border-white'
+                  className={`p-2  border-r border-l border-white`}
                   onClick={() =>{
                     context.setShowDetail(false);
                     context.setHideAside(false);
@@ -52,7 +52,7 @@ function NavBar() {
                     {`${context.cartCount}`}
                     My cart
                 </button>
-                <li className=' p-2  border-r border-l border-white'>
+                <li className={`${context.signIn ? '' : 'hideTag'} p-2  border-r border-l border-white`}>
                   <NavLink
                     to='/my-orders'
                     className={({isActive}) =>{

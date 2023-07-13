@@ -20,12 +20,12 @@ import { Items_AsideBar } from '../components/Items_AsideBar/index.jsx';
 
 const AppRoutes = () =>{
   let routes = useRoutes([
-    {path: '/', element: <Home_page/>},
+    {path: '/home', element: <Home_page/>},
     {path: '/my-account', element: <MyAccount/>},
     {path: '/my-orders', element: <MyOrders/>},
-    {path: '/sign-in', element: <SignIn/>},
+    {path: '/', element: <SignIn/>},
+    {path: '/register', element: <Register/>},
     {path: '/*', element: <NotFound/>},
-    {path: '/register', element: <Register/>}
   ]);
 
   return routes;

@@ -1,10 +1,12 @@
-import { data } from 'autoprefixer';
 import React from 'react';
 import { createContext } from "react";
 
 const AppContext = createContext();
 
 const AppProvider = ({children}) =>{
+
+    //Para manejar el render del NAV globalmente
+    const [signIn, setSignIn] = React.useState(false);
 
     //Determina si hay una cuenta creada o no
     const [userCreated, setUserCreated] = React.useState(() =>{
@@ -16,6 +18,7 @@ const AppProvider = ({children}) =>{
             return false;
         }
     });
+    console.log(userCreated);
 
     //Datos del usuario
     const [userData, setUserData] = React.useState(() =>{
@@ -103,12 +106,12 @@ const AppProvider = ({children}) =>{
     return(
         <AppContext.Provider
             value={{
-
+                signIn, 
+                setSignIn,
                 userCreated, 
                 setUserCreated,
                 userData, 
                 setUserData,
-
                 cards, 
                 setCards,
                 hideAside, 

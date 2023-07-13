@@ -47,8 +47,10 @@ function SignIn_Form() {
                         "password": context.userData.password
                     }
                     if(JSON.stringify(realData) === JSON.stringify(dataTyped)){
-                        navigate('/')
+                        context.setSignIn(true);
+                        navigate('/home');
                     }else{
+                        console.log(dataTyped);
                         console.log('Datos incorrectos');
                     }
                 }}
