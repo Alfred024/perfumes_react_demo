@@ -12,9 +12,27 @@ const AppProvider = ({children}) =>{
         if(userExists){
             return Boolean(userExists);
         }else{
+            localStorage.setItem("user", "false");
             return false;
         }
     });
+
+    //Datos del usuario
+    const [userData, setUserData] = React.useState(() =>{
+        const userData  =localStorage.getItem("userData");
+        if(userData){
+            return JSON.parse(userData);
+        }else{
+            localStorage.setItem("userData", "{}");
+            return {};
+        }
+    });
+
+    //Usamos un effect para no tener que acceder al localStorage desde el componente
+    React.useEffect(()=>{
+        const userDataParsed = JSON.stringify(userData);
+        localStorage.setItem("userData", userDataParsed);
+    }, [userData]);
 
     //Cards redered by the category value
     const [categoryName, setCategoryName] = React.useState('');
@@ -85,8 +103,12 @@ const AppProvider = ({children}) =>{
     return(
         <AppContext.Provider
             value={{
+
                 userCreated, 
                 setUserCreated,
+                userData, 
+                setUserData,
+
                 cards, 
                 setCards,
                 hideAside, 
