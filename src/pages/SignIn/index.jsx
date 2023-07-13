@@ -6,7 +6,7 @@ import { SignIn_Form } from '../../components/SignIn_Form';
 //Si estamos en esta página debemos de ocultar el navBar con las demás opciones
 function SignIn() {
     return ( 
-      <div className='w-full h-full flex align-middle place-content-center'>
+      <div className='mt-10'>
         
         <SignIn_Form/>
       </div>      

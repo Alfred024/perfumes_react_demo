@@ -29,7 +29,7 @@ function NavBar() {
                     className={({isActive}) =>{
                       isActive ? activeStyle : undefined
                     }}>
-                      Sign In
+                      Sign Out
                   </NavLink>
                 </li>
                 <li className=' p-2  border-r border-l border-white'>
@@ -80,7 +80,7 @@ function NavBar() {
                 className={({isActive}) =>{
                   isActive ? activeStyle : undefined
                 }}>
-                  Sign In
+                  Sign Out
             </NavLink>
           </li>
           <li className='flex justify-center p-2  border-r border border-white'>

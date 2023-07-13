@@ -5,6 +5,17 @@ import { createContext } from "react";
 const AppContext = createContext();
 
 const AppProvider = ({children}) =>{
+
+    //Determina si hay una cuenta creada o no
+    const [userCreated, setUserCreated] = React.useState(() =>{
+        const userExists = localStorage.getItem("user");
+        if(userExists){
+            return Boolean(userExists);
+        }else{
+            return false;
+        }
+    });
+
     //Cards redered by the category value
     const [categoryName, setCategoryName] = React.useState('');
 
@@ -74,6 +85,8 @@ const AppProvider = ({children}) =>{
     return(
         <AppContext.Provider
             value={{
+                userCreated, 
+                setUserCreated,
                 cards, 
                 setCards,
                 hideAside, 

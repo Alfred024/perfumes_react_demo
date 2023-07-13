@@ -10,6 +10,8 @@ import { MyAccount } from '../pages/MyAccount';
 import { MyOrders } from '../pages/MyOrders';
 import { NotFound } from '../pages/NotFound';
 import { SignIn } from '../pages/SignIn';
+import { Register } from '../pages/Register';
+
 
 //Components
 import { NavBar } from '../components/NavBar';
@@ -23,6 +25,7 @@ const AppRoutes = () =>{
     {path: '/my-orders', element: <MyOrders/>},
     {path: '/sign-in', element: <SignIn/>},
     {path: '/*', element: <NotFound/>},
+    {path: '/register', element: <Register/>}
   ]);
 
   return routes;

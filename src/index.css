@@ -56,7 +56,7 @@ li{
 /* MadiaQuerie para ajustar el OrderItem en  */
 @media (max-width:850px) {
 
-    .signInForm{
+    .signIn_registerForm{
         width: 320px;
     }
     .myOrdersPage{
