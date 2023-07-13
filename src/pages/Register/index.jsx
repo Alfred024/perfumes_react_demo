@@ -14,7 +14,6 @@ function Register() {
     const navigate = useNavigate();
     const [dataTyped, setDataTyped] = React.useState(userInputs);
 
-
     const updateData = (event) =>{
         const newValue = event.target.value;
         setDataTyped({
@@ -35,6 +34,7 @@ function Register() {
                 event.preventDefault();
                 if (checkPasswords){
                     context.setUserData(dataTyped);
+                    context.setUserCreated(true);
                     console.log("Se han guardado los datos del usuario");
                     navigate('/sign-in');
                 }else{
