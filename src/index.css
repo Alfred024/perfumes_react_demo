@@ -56,6 +56,9 @@ li{
 /* MadiaQuerie para ajustar el OrderItem en  */
 @media (max-width:850px) {
 
+    .signInForm{
+        width: 320px;
+    }
     .myOrdersPage{
         flex-direction: column;
     }
