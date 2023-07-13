@@ -1,0 +1,6 @@
+#1: Implementar local storage para guardar los datos de las órdenes
+#2: Arreglar el componente que muestra la información de todas las órdenes (InfoOrder)
+#3: Crear los componentes para el Sign-in y My-ACcount
+#4: Provedor de autenticación de usuario
+#5: Estilizar el scrollbar 
+#6: Meter los loading skeletons a las cards y al local storage
