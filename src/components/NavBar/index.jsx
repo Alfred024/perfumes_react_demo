@@ -9,7 +9,7 @@ function NavBar() {
 
     return ( 
     <>
-        <nav className='flex justify-between bg-slate-900 text-white'>
+        <nav className={`${context.signIn ? '' : 'p-5'} flex justify-between bg-slate-900 text-white `}>
             <ul className='flex'>
                 <li className={`${context.signIn ? '' : 'hideTag'} p-2  border-r border-l border-white`}>
                   <NavLink
@@ -26,6 +26,7 @@ function NavBar() {
                 <li className={`${context.signIn ? '' : 'hideTag'} p-2  border-r border-l border-white`}>
                   <NavLink
                     to='/'
+                    onClick={() =>{ context.setSignIn(false) }}
                     className={({isActive}) =>{
                       isActive ? activeStyle : undefined
                     }}>
@@ -43,7 +44,7 @@ function NavBar() {
                   </NavLink>
                 </li>
                 <button 
-                  className={`p-2  border-r border-l border-white`}
+                  className={`${context.signIn ? '' : 'hideTag'} p-2  border-r border-l border-white`}
                   onClick={() =>{
                     context.setShowDetail(false);
                     context.setHideAside(false);
@@ -67,16 +68,20 @@ function NavBar() {
               onClick={() =>{
                 setHideVerticalNav(!hideVerticalNav);
               }}
-              className='displayVerticalNav p-2 '>
-                <i className="fa-solid fa-bars"></i>
+              className={`displayVerticalNav pr-3`}>
+                <i className={`fa-solid fa-bars ${context.signIn ? '' : 'hideTag'}`}></i>
             </button>
         </nav>
 
         <div 
-          className={`navBarVertical ${hideVerticalNav ? 'hideTag' : 'flex'} w-1/2 h-full absolute bg-slate-900 text-white right-0 z-40`}>
+          className={`navBarVertical  ${hideVerticalNav ? 'hideTag' : 'flex'} w-1/2 h-full absolute bg-slate-900 text-white right-0 z-40`}>
           <li className='flex justify-center p-2  border-r border border-white'>
             <NavLink
-                to='/sign-in'
+                to='/'
+                onClick={() =>{ 
+                  context.setSignIn(false);
+                  setHideVerticalNav(true);
+                }}
                 className={({isActive}) =>{
                   isActive ? activeStyle : undefined
                 }}>
