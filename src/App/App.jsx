@@ -2,7 +2,7 @@ import React from 'react';
 import { useRoutes, BrowserRouter } from 'react-router-dom'
 
 //Context
-import { AppProvider } from '../context';
+import { AppContext } from '../context';
 
 //Pages
 import { Home_page } from '../pages/Home_page';
@@ -19,13 +19,15 @@ import { Body_layout } from '../components/Body_layout'
 import { Items_AsideBar } from '../components/Items_AsideBar/index.jsx';
 
 const AppRoutes = () =>{
+  const context = React.useContext(AppContext);
+
   let routes = useRoutes([
-    {path: '/home', element: <Home_page/>},
-    {path: '/my-account', element: <MyAccount/>},
-    {path: '/my-orders', element: <MyOrders/>},
     {path: '/', element: <SignIn/>},
-    {path: '/register', element: <Register/>},
-    {path: '/*', element: <NotFound/>},
+    {path: '/home', element: context.signIn ? <Home_page/> : <SignIn/>},
+    {path: '/my-account', element: context.signIn ? <MyAccount/> : <SignIn/>},
+    {path: '/my-orders', element: context.signIn ? <MyOrders/> : <SignIn/>},
+    {path: '/register', element: context.signIn ? <Register/> : <SignIn/>},
+    {path: '/*', element:  context.signIn ? <NotFound/> : <SignIn/>},
   ]);
 
   return routes;
@@ -33,7 +35,7 @@ const AppRoutes = () =>{
 
 function App() {
     return ( 
-      <AppProvider>
+      <>
         <BrowserRouter>
         <NavBar/>
 
@@ -43,7 +45,7 @@ function App() {
         </Body_layout>
         
       </BrowserRouter>      
-      </AppProvider>
+      </>
     );
 }
 
